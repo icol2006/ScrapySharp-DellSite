@@ -1,31 +1,16 @@
-﻿using ScrapySharp.Core;
-using ScrapySharp.Html.Parsing;
+﻿using HtmlAgilityPack;
+using ScrapySharp.Extensions;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using HtmlAgilityPack;
-using ScrapySharp.Extensions;
-using System.Collections;
-using Newtonsoft.Json;
-using System.Data;
 
 namespace ScrapySharp
 {
-    class Program
+    public class ScrapingWeb
     {
-        static void Main(string[] args)
-        {
-           
-            ScrapingWeb scrapeWeb = new ScrapingWeb();
-            DataSet dts = new DataSet();
-            dts = scrapeWeb.convertToDataSet(scrapeWeb.getData());
-            int s = 4;
-     
-        }
-
-        /*
         public static DataTable loadDatatableColumns()
         {
             DataTable dt = new DataTable();
@@ -38,21 +23,19 @@ namespace ScrapySharp
             dt.Columns.Add("Version");
             dt.Columns.Add("Released");
             dt.Columns.Add("Supported OS");
-           // dt.Columns.Add("Download");
+            // dt.Columns.Add("Download");
 
             return dt;
         }
 
-        public static void convertToDataSet(List<Category> listCategories)
+        public DataSet convertToDataSet(List<Category> listCategories)
         {
             DataSet dts = new DataSet();
             DataTable dt = loadDatatableColumns();
-
-
+            DataRow dtr = dt.NewRow();
 
             foreach (var category in listCategories)
-            {
-                DataRow dtr = dt.NewRow();                
+            {                
 
                 foreach (var listType in category.ListTypes)
                 {
@@ -67,17 +50,20 @@ namespace ScrapySharp
                         dtr["Released"] = product.Release;
                         dtr["Supported OS"] = product.SupportedOs;
                         //dtr["Download"] = product.DownloadLink;
-                        dt.Rows.Add(dtr);
+                        dt.Rows.Add(dtr.ItemArray);
                         dtr = dt.NewRow();
                     }
-                    
+                    dts.Tables.Add(dt);
+                    dt = loadDatatableColumns();
                 }
-                dts.Tables.Add(dt);
-                dt = loadDatatableColumns();
+                
+              
             }
+
+            return dts;
         }
 
-        public static List<Category> getData()
+        public List<Category> getData()
         {
             HtmlWeb web = new HtmlWeb();
             HtmlDocument doc = web.Load("http://downloads.dell.com/published/pages/alienware-alpha.html");
@@ -92,8 +78,7 @@ namespace ScrapySharp
             var nodes = doc.DocumentNode.CssSelect("#Drivers>UL>LI").ToList();
             foreach (var node in nodes)
             {
-
-                category.Name = node.CssSelect("H5").FirstOrDefault().InnerText.Replace("Category:","");
+                category.Name = node.CssSelect("H5").FirstOrDefault().InnerText.Replace("Category:", "");
 
                 var infoListTypes = node.CssSelect("ul>li");
                 var nameType = node.CssSelect("ul>li>h5").ToList();
@@ -102,7 +87,7 @@ namespace ScrapySharp
                 foreach (var infoType in infoListTypes)
                 {
 
-                    type.Name = infoType.CssSelect("H5").FirstOrDefault().InnerText.Replace("Type:","");
+                    type.Name = infoType.CssSelect("H5").FirstOrDefault().InnerText.Replace("Type:", "");
 
                     var infoListProduct = infoType.CssSelect("tr").ToList();
 
@@ -153,6 +138,6 @@ namespace ScrapySharp
             }
 
             return listCategories;
-        }*/
+        }
     }
 }

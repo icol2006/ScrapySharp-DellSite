@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ScrapySharp
 {
-    class Category
+    public class Category
     {
         public String Name { get; set; }
         public List<Type> ListTypes { get; set; }
