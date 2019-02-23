@@ -1,0 +1,16 @@
+C:\Users\Maykol\Documents\Software deveploment\C Sharp\ScrapySharp\ScrapySharp\bin\Debug\ScrapySharp.exe.config
+C:\Users\Maykol\Documents\Software deveploment\C Sharp\ScrapySharp\ScrapySharp\obj\Debug\ScrapySharp.csprojResolveAssemblyReference.cache
+C:\Users\Maykol\Documents\Software deveploment\C Sharp\ScrapySharp\ScrapySharp\bin\Debug\ScrapySharp.exe
+C:\Users\Maykol\Documents\Software deveploment\C Sharp\ScrapySharp\ScrapySharp\bin\Debug\ScrapySharp.pdb
+C:\Users\Maykol\Documents\Software deveploment\C Sharp\ScrapySharp\ScrapySharp\bin\Debug\FSharp.Core.dll
+C:\Users\Maykol\Documents\Software deveploment\C Sharp\ScrapySharp\ScrapySharp\bin\Debug\HtmlAgilityPack.dll
+C:\Users\Maykol\Documents\Software deveploment\C Sharp\ScrapySharp\ScrapySharp\bin\Debug\ScrapySharp.Core.dll
+C:\Users\Maykol\Documents\Software deveploment\C Sharp\ScrapySharp\ScrapySharp\bin\Debug\ScrapySharpAsync.dll
+C:\Users\Maykol\Documents\Software deveploment\C Sharp\ScrapySharp\ScrapySharp\bin\Debug\FSharp.Core.xml
+C:\Users\Maykol\Documents\Software deveploment\C Sharp\ScrapySharp\ScrapySharp\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\Maykol\Documents\Software deveploment\C Sharp\ScrapySharp\ScrapySharp\bin\Debug\HtmlAgilityPack.xml
+C:\Users\Maykol\Documents\Software deveploment\C Sharp\ScrapySharp\ScrapySharp\obj\Debug\ScrapySharp.exe
+C:\Users\Maykol\Documents\Software deveploment\C Sharp\ScrapySharp\ScrapySharp\obj\Debug\ScrapySharp.pdb
+C:\Users\Maykol\Documents\Software deveploment\C Sharp\ScrapySharp\ScrapySharp\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Maykol\Documents\Software deveploment\C Sharp\ScrapySharp\ScrapySharp\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\Maykol\Documents\Software deveploment\C Sharp\ScrapySharp\ScrapySharp\bin\Debug\Newtonsoft.Json.xml
